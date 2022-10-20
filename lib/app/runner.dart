@@ -10,7 +10,7 @@ import 'package:injectable/injectable.dart';
 import 'package:resume/app/bloc/app_blocs_provider.dart';
 import 'package:resume/app/bloc_observer/bloc_observer.dart';
 import 'package:resume/app/runner.config.dart';
-import 'package:resume/core/navigator/custom_navigator.dart';
+import 'package:resume/core/navigator/models/custom_navigator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'app.dart';

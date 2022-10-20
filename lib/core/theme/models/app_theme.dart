@@ -57,7 +57,7 @@ class BaseAppTheme implements AppTheme {
   );
 
   static final _checkBoxTheme = CheckboxThemeData(
-    fillColor: MaterialStateProperty.all<Color>(ColorPallet.primary),
+    fillColor: MaterialStateProperty.all<Color>(ColorPallet.purple),
   );
 
   static const _appBarTheme = AppBarTheme(
@@ -68,9 +68,9 @@ class BaseAppTheme implements AppTheme {
 
   @override
   ThemeData get lightTheme => ThemeData(
-        useMaterial3: true,
         brightness: Brightness.light,
-        primarySwatch: ColorPallet.primary,
+        primaryColor: _colorScheme.lightScheme.primary,
+        canvasColor: _colorScheme.lightScheme.primary,
         colorScheme: _colorScheme.lightScheme,
         textTheme: _textScheme.lightThemeTextThemes,
         fontFamily: GoogleFonts.roboto().fontFamily,
@@ -86,7 +86,7 @@ class BaseAppTheme implements AppTheme {
         brightness: Brightness.dark,
         colorScheme: _colorScheme.darkScheme,
         textTheme: _textScheme.darkThemeTextThemes,
-        fontFamily: GoogleFonts.montserrat().fontFamily,
+        fontFamily: GoogleFonts.roboto().fontFamily,
         inputDecorationTheme: _darkInputDecoration,
       );
 }

@@ -5,23 +5,24 @@ import 'package:injectable/injectable.dart';
 class ColorPallet {
   static const Color black = Color.fromARGB(255, 0, 0, 0);
   static const Color white = Color.fromARGB(255, 255, 255, 255);
+  static const Color greyLight = Color(0xFF5e5e5e);
+  static const Color greyDark = Color(0xFF343434);
   static const Color background = Color(0xFFF7F7F7);
-  static const MaterialColor primary = _primary;
+  static const MaterialColor purple = kPurple;
 }
 
-const MaterialColor _primary = MaterialColor(
-  _bluePrimaryValue,
+const MaterialColor kPurple = MaterialColor(
+  0xFF9c27b0,
   <int, Color>{
-    50: Color(0xFF00101B),
-    100: Color(0xFF00101B),
-    200: Color(0xFF001F37),
-    300: Color(0xFF002F52),
-    400: Color(0xFF003E6E),
-    500: Color(_bluePrimaryValue),
-    600: Color(0xFF3371A1),
-    700: Color(0xFF6695B8),
-    800: Color(0xFF99B8D0),
-    900: Color(0xFFCCDCE7),
+    50: Color(0xFFf3e5f5),
+    100: Color(0xFFe1bee7),
+    200: Color(0xFFce93d8),
+    300: Color(0xFFba68c8),
+    400: Color(0xFFab47bc),
+    500: Color(0xFF9c27b0),
+    600: Color(0xFF8e24aa),
+    700: Color(0xFF7b1fa2),
+    800: Color(0xFF6a1b9a),
+    900: Color(0xFF4a148c),
   },
 );
-const int _bluePrimaryValue = 0xFF004E89;

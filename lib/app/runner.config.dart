@@ -38,7 +38,7 @@ Future<_i1.GetIt> $initGetIt(
     preResolve: true,
   );
   gh.factory<_i7.AppColorScheme>(
-      () => _i7.BaseAppColorScheme(colorPallete: get<_i5.ColorPallet>()));
+      () => _i7.BaseAppColorScheme(colorPallet: get<_i5.ColorPallet>()));
   gh.factory<_i8.AppTheme>(() => _i8.BaseAppTheme(
         colorScheme: get<_i7.AppColorScheme>(),
         appTextTheme: get<_i3.AppTextTheme>(),
