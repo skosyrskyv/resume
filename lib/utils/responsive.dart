@@ -7,7 +7,7 @@ class BreakPoints {
   static const int LG = 1140;
   static const int MD = 720;
   static const int SM = 576;
-  static const int XS = 400;
+  static const int XS = 450;
 }
 
 class Responsive extends StatelessWidget {
@@ -23,24 +23,22 @@ class Responsive extends StatelessWidget {
   }) : super(key: key);
 
   static bool isMobile(BuildContext context) =>
-      MediaQuery.of(context).size.width < BreakPoints.SM;
+      MediaQuery.of(context).size.width < BreakPoints.XS;
 
   static bool isTablet(BuildContext context) =>
-      MediaQuery.of(context).size.width < BreakPoints.LG &&
-      MediaQuery.of(context).size.width >= BreakPoints.SM;
+      MediaQuery.of(context).size.width < BreakPoints.MD &&
+      MediaQuery.of(context).size.width >= BreakPoints.XS;
 
   static bool isDesktop(BuildContext context) =>
-      MediaQuery.of(context).size.width >= BreakPoints.LG;
+      MediaQuery.of(context).size.width >= BreakPoints.MD;
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
-
-    if (size.width >= BreakPoints.LG) {
+    if (isDesktop(context)) {
       return desktop;
-    } else if (size.width >= BreakPoints.MD && tablet != null) {
+    } else if (isTablet(context) && tablet != null) {
       return tablet!;
-    } else if (size.width >= BreakPoints.MD && tablet == null) {
+    } else if (isTablet(context) && tablet == null) {
       return desktop;
     } else {
       return mobile;

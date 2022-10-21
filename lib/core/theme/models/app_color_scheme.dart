@@ -17,7 +17,7 @@ class BaseAppColorScheme implements AppColorScheme {
         onPrimary: ColorPallet.white,
         primaryContainer: Color(0xFFCCDCE7),
         onPrimaryContainer: Color(0xFF003E6E),
-        secondary: Color(0xFF0D99FF),
+        secondary: ColorPallet.blue,
         onSecondary: Color(0xFFFFFFFF),
         secondaryContainer: Color(0xFFCFEBFF),
         onSecondaryContainer: Color(0xFF0A7ACC),

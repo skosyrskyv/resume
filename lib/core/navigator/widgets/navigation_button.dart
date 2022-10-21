@@ -4,8 +4,8 @@ class NavigationButton extends StatefulWidget {
   final Widget icon;
   final bool selected;
   final double diameter;
-  final Color iconColor;
-  final Color selectedIconColor;
+  final List<Color> iconColorGradient;
+  final List<Color> selectedIconColorGradient;
   final Duration colorChangingDuration;
   final VoidCallback onTap;
 
@@ -14,8 +14,8 @@ class NavigationButton extends StatefulWidget {
     required this.icon,
     required this.selected,
     required this.diameter,
-    required this.iconColor,
-    required this.selectedIconColor,
+    required this.iconColorGradient,
+    required this.selectedIconColorGradient,
     required this.colorChangingDuration,
     required this.onTap,
   });
@@ -25,32 +25,37 @@ class NavigationButton extends StatefulWidget {
 }
 
 class _NavigationButtonState extends State<NavigationButton> {
-  late Color _color;
+  late List<Color> _colors;
 
   @override
   void initState() {
-    _setColor();
+    _setColors();
     super.initState();
   }
 
   @override
   void didUpdateWidget(covariant NavigationButton oldWidget) {
-    _delayedColorUpdate();
+    _delayedColorsUpdate();
     super.didUpdateWidget(oldWidget);
   }
 
-  void _delayedColorUpdate() async {
+  void _delayedColorsUpdate() async {
     await Future.delayed(widget.colorChangingDuration);
-    _setColor();
+    _setColors();
   }
 
-  void _setColor() {
-    _color = widget.selected ? widget.selectedIconColor : widget.iconColor;
-    setState(() {});
+  void _setColors() {
+    if (mounted) {
+      _colors = widget.selected
+          ? widget.selectedIconColorGradient
+          : widget.iconColorGradient;
+      setState(() {});
+    }
   }
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return GestureDetector(
       onTap: widget.onTap,
       child: Container(
@@ -61,9 +66,17 @@ class _NavigationButtonState extends State<NavigationButton> {
         ),
         child: IconTheme(
           data: IconThemeData(
-            color: _color,
+            color: theme.colorScheme.onPrimary,
+            size: 35,
           ),
-          child: widget.icon,
+          child: ShaderMask(
+            shaderCallback: (Rect bounds) {
+              return LinearGradient(
+                colors: _colors,
+              ).createShader(bounds);
+            },
+            child: widget.icon,
+          ),
         ),
       ),
     );

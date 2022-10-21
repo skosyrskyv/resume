@@ -7,7 +7,11 @@ class HomeMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Screen(
-      body: Center(child: Text('Home')),
+      body: Center(
+        child: Text(
+          MediaQuery.of(context).size.width.toString(),
+        ),
+      ),
     );
   }
 }

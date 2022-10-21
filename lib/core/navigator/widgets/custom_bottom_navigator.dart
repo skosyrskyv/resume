@@ -37,7 +37,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-
+    final theme = Theme.of(context);
     return BlocBuilder<BottomNavigatorCubit, int>(
       builder: (context, screenIndex) {
         return Container(
@@ -59,7 +59,12 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                     width: _itemWidth,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Theme.of(context).primaryColor,
+                      gradient: LinearGradient(
+                        colors: [
+                          theme.colorScheme.primary,
+                          theme.colorScheme.secondary,
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -71,9 +76,14 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                       icon: item.icon,
                       diameter: 60,
                       selected: screenIndex == index,
-                      iconColor: Theme.of(context).primaryColor,
-                      selectedIconColor:
-                          Theme.of(context).colorScheme.onPrimary,
+                      iconColorGradient: [
+                        theme.colorScheme.primary,
+                        theme.colorScheme.secondary,
+                      ],
+                      selectedIconColorGradient: [
+                        theme.colorScheme.onPrimary,
+                        theme.colorScheme.onPrimary,
+                      ],
                       colorChangingDuration: _animationDuration,
                       onTap: () =>
                           context.read<BottomNavigatorCubit>().setTab(index),

@@ -8,7 +8,8 @@ class ColorPallet {
   static const Color greyLight = Color(0xFF5e5e5e);
   static const Color greyDark = Color(0xFF343434);
   static const Color background = Color(0xFFF7F7F7);
-  static const Color purple = Color(0xFFab47bc);
+  static const Color purple = kPurple;
+  static const Color blue = Color.fromARGB(255, 87, 72, 255);
 }
 
 const MaterialColor kPurple = MaterialColor(
