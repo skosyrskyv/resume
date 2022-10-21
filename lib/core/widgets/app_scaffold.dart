@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class AppScaffold extends StatelessWidget {
   final Widget? body;
@@ -19,6 +17,7 @@ class AppScaffold extends StatelessWidget {
     return Scaffold(
       appBar: appBar,
       extendBody: true,
+      extendBodyBehindAppBar: true,
       bottomNavigationBar: bottomNavigationBar,
       backgroundColor: colorScheme.background,
       body: body,

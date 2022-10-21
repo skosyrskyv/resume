@@ -9,7 +9,9 @@ class Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Scaffold(
+      backgroundColor: theme.colorScheme.background,
       body: body,
     );
   }
