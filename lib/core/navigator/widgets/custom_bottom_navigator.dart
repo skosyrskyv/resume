@@ -42,7 +42,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       builder: (context, screenIndex) {
         return Container(
           color: Colors.transparent,
-          constraints: const BoxConstraints(maxHeight: 100),
+          constraints: const BoxConstraints(maxHeight: 110),
           child: SafeArea(
             top: false,
             left: false,
@@ -51,7 +51,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               children: [
                 AnimatedPositioned(
                   left: _calculateShift(screenIndex, screenWidth),
-                  bottom: 0,
+                  bottom: 8,
                   curve: Curves.easeInExpo,
                   duration: _animationDuration,
                   child: Container(
@@ -66,7 +66,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                 ...widget.items.mapWithIndex(
                   (item, index) => Positioned(
                     left: _calculateShift(index, screenWidth),
-                    bottom: 0,
+                    bottom: 8,
                     child: NavigationButton(
                       icon: item.icon,
                       diameter: 60,

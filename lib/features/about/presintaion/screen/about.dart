@@ -6,6 +6,8 @@ class About extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Screen();
+    return Screen(
+      body: Center(child: Text('About')),
+    );
   }
 }

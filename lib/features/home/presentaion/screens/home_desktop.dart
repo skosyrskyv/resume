@@ -7,7 +7,7 @@ class HomeDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Screen(
-      body: Center(child: Text('home')),
+      body: Center(child: Text('Home')),
     );
   }
 }
