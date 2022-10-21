@@ -95,7 +95,6 @@ class _NavigatorDisplayResolverState extends State<NavigatorDisplayResolver> {
 class _Mobile extends StatelessWidget {
   final List<BottomNavigationBarItem> items;
   const _Mobile({
-    super.key,
     required this.items,
   });
 
@@ -113,7 +112,6 @@ class _Mobile extends StatelessWidget {
 class _Desktop extends StatelessWidget {
   final List<BottomNavigationBarItem> items;
   const _Desktop({
-    super.key,
     required this.items,
   });
 
