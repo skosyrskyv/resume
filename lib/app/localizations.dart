@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 const _russianLocale = Locale('ru', 'RU');
 const _englishLocale = Locale('en', 'US');
