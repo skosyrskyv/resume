@@ -9,6 +9,8 @@ class ColorPallet {
   static const Color greyDark = Color(0xFF343434);
   static const Color background = Color(0xFFF7F7F7);
   static const Color purple = kPurple;
+  static const Color purpleDark = Color.fromARGB(255, 108, 13, 125);
+
   static const Color blue = Color.fromARGB(255, 87, 72, 255);
 }
 
