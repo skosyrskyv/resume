@@ -1,10 +1,10 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:resume/core/navigator/models/routes.dart';
-import 'package:resume/features/about/presintaion/screen/about.dart';
-import 'package:resume/features/contacts/presintaion/screen/presentaion.dart';
-import 'package:resume/features/home/presentaion/screen/home.dart';
-import 'package:resume/features/projects/presintaion/screen/projects.dart';
+import 'package:resume/features/about/presentation/screen/about.dart';
+import 'package:resume/features/contacts/presentation/screen/contacts.dart';
+import 'package:resume/features/home/presentation/screen/home.dart';
+import 'package:resume/features/projects/presentation/screen/projects.dart';
 
 class CustomNavigator {
   static FluroRouter router = FluroRouter();

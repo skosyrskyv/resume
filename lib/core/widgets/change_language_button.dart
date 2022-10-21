@@ -37,11 +37,11 @@ class _ChangeLanguageButtonState extends State<ChangeLanguageButton> {
   Widget build(BuildContext context) {
     getLocale();
     return AppBarButton(
+      onTap: setLocale,
       child: Text(
         langCode,
         style: Theme.of(context).textTheme.headlineSmall,
       ),
-      onTap: setLocale,
     );
   }
 }

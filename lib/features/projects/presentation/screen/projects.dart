@@ -6,7 +6,7 @@ class Projects extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Screen(
+    return const Screen(
       body: Center(
         child: Text('Projects'),
       ),

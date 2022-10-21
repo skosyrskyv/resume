@@ -11,7 +11,7 @@ class ChangeThemeButton extends StatelessWidget {
     return BlocBuilder<ThemeBloc, ThemeState>(
       builder: (context, state) {
         return AppBarButton(
-          child: Icon(Icons.mode_night),
+          child: const Icon(Icons.mode_night),
           onTap: () => context.read<ThemeBloc>().add(
                 state is DarkThemeState
                     ? const ThemeEvent.setLight()

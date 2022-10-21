@@ -27,7 +27,6 @@ class BottomNavbarButton extends StatefulWidget {
 
 class _BottomNavbarButtonState extends State<BottomNavbarButton> {
   late List<Color> _colors;
-  late IconThemeData _iconTheme;
   @override
   void initState() {
     _setColors();
