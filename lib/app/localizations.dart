@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 const _russianLocale = Locale('ru', 'RU');
-const _englishLocale = Locale('us', 'US');
+const _englishLocale = Locale('en', 'US');
 
 class AppLocalizations {
   static const Locale russian = _russianLocale;

@@ -1,5 +1,9 @@
-key,us_US,ru_RU
+key,en_US,ru_RU
+app_name,Resume,nРезюме
 home_action,home,главная
 contacts_action,contacts,контакты
 about_action,about,обо мне
 projects_action,projects,проекты
+greeting_text,Hi!/nI`m Slava/nFlutter/nDeveloper,Привет!/nЯ Слава/nFlutter/nРазработчик
+about_app_text,This is my/nFlutter/nApplication/nResume,Это мое/nFlutter/nПриложение/nРезюме
+app_abilities_text,You can/nRun this/nOn any/nDevices,Ты можешь/nЗапустить/nПриложение/nНа любом/nУстройстве,
