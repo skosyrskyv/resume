@@ -3,40 +3,35 @@ import 'package:flutter/material.dart';
 
 class GradientTextButton extends StatelessWidget {
   final String? text;
+  final TextStyle? textStyle;
+  final EdgeInsets padding;
+  final List<Color> colors;
   final VoidCallback? onTap;
-  final bool selected;
   const GradientTextButton({
     super.key,
     this.text,
+    this.textStyle,
+    this.padding = EdgeInsets.zero,
+    required this.colors,
     this.onTap,
-    this.selected = true,
   });
 
   @override
   Widget build(BuildContext context) {
-    final colorizeColors = [
-      Colors.purple,
-      Colors.blue.shade700,
-    ];
-
-    const colorizeTextStyle = TextStyle(
-      fontSize: 20.0,
-      fontFamily: 'Invetero',
-    );
-
-    return GestureDetector(
+    return InkWell(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.all(32),
+        padding: padding,
         color: Colors.transparent,
         child: AnimatedTextKit(
           animatedTexts: [
             ColorizeAnimatedText(
               text ?? '',
-              textStyle: colorizeTextStyle,
-              colors: colorizeColors,
+              textStyle: textStyle ?? Theme.of(context).textTheme.bodyMedium!,
+              colors: colors,
             ),
           ],
+          onTap: onTap,
           isRepeatingAnimation: false,
         ),
       ),
