@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// Screen displays all text themes
 class TextThemeExampleScreen extends StatelessWidget {
   const TextThemeExampleScreen({Key? key}) : super(key: key);
 
