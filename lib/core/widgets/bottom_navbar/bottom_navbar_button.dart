@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:resume/core/widgets/buttons/gradient_icon_button.dart';
 
-class NavigationButton extends StatefulWidget {
+class BottomNavbarButton extends StatefulWidget {
   final Widget icon;
   final bool selected;
-  final double diameter;
+  final double size;
   final List<Color> iconColorGradient;
   final List<Color> selectedIconColorGradient;
   final Duration colorChangingDuration;
   final VoidCallback onTap;
 
-  const NavigationButton({
+  const BottomNavbarButton({
     super.key,
     required this.icon,
     required this.selected,
-    required this.diameter,
+    required this.size,
     required this.iconColorGradient,
     required this.selectedIconColorGradient,
     required this.colorChangingDuration,
@@ -21,12 +22,12 @@ class NavigationButton extends StatefulWidget {
   });
 
   @override
-  State<NavigationButton> createState() => _NavigationButtonState();
+  State<BottomNavbarButton> createState() => _BottomNavbarButtonState();
 }
 
-class _NavigationButtonState extends State<NavigationButton> {
+class _BottomNavbarButtonState extends State<BottomNavbarButton> {
   late List<Color> _colors;
-
+  late IconThemeData _iconTheme;
   @override
   void initState() {
     _setColors();
@@ -34,7 +35,7 @@ class _NavigationButtonState extends State<NavigationButton> {
   }
 
   @override
-  void didUpdateWidget(covariant NavigationButton oldWidget) {
+  void didUpdateWidget(covariant BottomNavbarButton oldWidget) {
     _delayedColorsUpdate();
     super.didUpdateWidget(oldWidget);
   }
@@ -56,29 +57,16 @@ class _NavigationButtonState extends State<NavigationButton> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return GestureDetector(
+    final iconTheme = IconThemeData(
+      color: theme.colorScheme.onPrimary,
+      size: 35,
+    );
+    return GradientIconButton(
       onTap: widget.onTap,
-      child: Container(
-        height: widget.diameter,
-        width: widget.diameter,
-        decoration: const BoxDecoration(
-          shape: BoxShape.circle,
-        ),
-        child: IconTheme(
-          data: IconThemeData(
-            color: theme.colorScheme.onPrimary,
-            size: 35,
-          ),
-          child: ShaderMask(
-            shaderCallback: (Rect bounds) {
-              return LinearGradient(
-                colors: _colors,
-              ).createShader(bounds);
-            },
-            child: widget.icon,
-          ),
-        ),
-      ),
+      size: widget.size,
+      iconTheme: iconTheme,
+      colors: _colors,
+      icon: widget.icon,
     );
   }
 }

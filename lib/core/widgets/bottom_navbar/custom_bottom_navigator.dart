@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:resume/core/navigator/cubit/bottom_navigator_cubit.dart';
-import 'package:resume/core/navigator/widgets/navigation_button.dart';
+import 'package:resume/core/widgets/bottom_navbar/bottom_navbar_button.dart';
 import 'package:resume/extensions/iterable_extension.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
@@ -72,9 +72,9 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                   (item, index) => Positioned(
                     left: _calculateShift(index, screenWidth),
                     bottom: 8,
-                    child: NavigationButton(
+                    child: BottomNavbarButton(
                       icon: item.icon,
-                      diameter: 60,
+                      size: 60,
                       selected: screenIndex == index,
                       iconColorGradient: [
                         theme.colorScheme.primary,
