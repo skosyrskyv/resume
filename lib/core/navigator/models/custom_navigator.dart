@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:resume/core/navigator/models/routes.dart';
 import 'package:resume/features/about/presintaion/screen/about.dart';
 import 'package:resume/features/contacts/presintaion/screen/presentaion.dart';
-import 'package:resume/features/home/presentaion/screens/home.dart';
+import 'package:resume/features/home/presentaion/screen/home.dart';
 import 'package:resume/features/projects/presintaion/screen/projects.dart';
 
 class CustomNavigator {
