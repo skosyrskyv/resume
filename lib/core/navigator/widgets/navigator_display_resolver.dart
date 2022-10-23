@@ -6,6 +6,7 @@ import 'package:resume/core/navigator/widgets/navigator.dart';
 import 'package:resume/core/navigator/models/routes.dart';
 import 'package:resume/core/widgets/app_bar/custom_app_bar.dart';
 import 'package:resume/core/widgets/app_scaffold.dart';
+import 'package:resume/core/widgets/blurred_surface.dart';
 import 'package:resume/core/widgets/bottom_navbar/custom_bottom_navigator.dart';
 import 'package:resume/core/widgets/buttons/gradient_text_button.dart';
 import 'package:resume/utils/responsive.dart';
@@ -117,19 +118,6 @@ class _Desktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final colors = <Color>[
-      theme.colorScheme.primary,
-      theme.colorScheme.secondary,
-    ];
-
-    const textStyle = TextStyle(
-      fontSize: 20,
-      fontFamily: 'Invetero',
-    );
-
-    const padding = EdgeInsets.all(32);
-
     return AppScaffold(
       appBar: const CustomAppBar(),
       body: SafeArea(
@@ -141,49 +129,77 @@ class _Desktop extends StatelessWidget {
             Positioned(
               top: 0,
               left: 0,
-              child: GradientTextButton(
+              child: _TextNavigationButton(
                 text: items[0].label!.tr(),
                 onTap: () => context.read<BottomNavigatorCubit>().setTab(0),
-                padding: padding,
-                textStyle: textStyle,
-                colors: colors,
               ),
             ),
             Positioned(
               top: 0,
               right: 0,
-              child: GradientTextButton(
-                text: items[1].label!.tr().capitalize(),
+              child: _TextNavigationButton(
+                text: items[1].label!.tr(),
                 onTap: () => context.read<BottomNavigatorCubit>().setTab(1),
-                padding: padding,
-                textStyle: textStyle,
-                colors: colors,
               ),
             ),
             Positioned(
               bottom: 0,
               right: 0,
-              child: GradientTextButton(
-                text: items[2].label!.tr().capitalize(),
+              child: _TextNavigationButton(
+                text: items[2].label!.tr(),
                 onTap: () => context.read<BottomNavigatorCubit>().setTab(2),
-                padding: padding,
-                textStyle: textStyle,
-                colors: colors,
               ),
             ),
             Positioned(
               bottom: 0,
               left: 0,
-              child: GradientTextButton(
-                text: items[3].label!.tr().capitalize(),
+              child: _TextNavigationButton(
+                text: items[3].label!.tr(),
                 onTap: () => context.read<BottomNavigatorCubit>().setTab(3),
-                padding: padding,
-                textStyle: textStyle,
-                colors: colors,
               ),
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _TextNavigationButton extends StatelessWidget {
+  final String text;
+  final VoidCallback onTap;
+  const _TextNavigationButton({
+    super.key,
+    required this.text,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colors = <Color>[
+      theme.colorScheme.primary,
+      theme.colorScheme.secondary,
+    ];
+
+    const textStyle = TextStyle(
+      fontSize: 20,
+      fontFamily: 'Invetero',
+    );
+
+    const padding = EdgeInsets.symmetric(horizontal: 16, vertical: 8);
+
+    return BlurredSurface(
+      margin: const EdgeInsets.all(8),
+      borderRadius: BorderRadius.circular(20),
+      sigmaX: 2,
+      sigmaY: 2,
+      child: GradientTextButton(
+        text: text,
+        onTap: onTap,
+        padding: padding,
+        textStyle: textStyle,
+        colors: colors,
       ),
     );
   }

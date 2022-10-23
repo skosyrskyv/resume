@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:resume/app/runner.dart';
 import 'package:resume/core/theme/bloc/theme_bloc.dart';
@@ -13,7 +14,14 @@ class ThemeProvider extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<ThemeBloc>(
       create: (context) => getIt.get(),
-      child: BlocBuilder<ThemeBloc, ThemeState>(builder: builder),
+      child: BlocConsumer<ThemeBloc, ThemeState>(
+        listener: (context, state) {
+          SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+            systemNavigationBarColor: state.theme.colorScheme.background,
+          ));
+        },
+        builder: builder,
+      ),
     );
   }
 }

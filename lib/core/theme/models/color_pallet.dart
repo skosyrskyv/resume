@@ -6,7 +6,7 @@ class ColorPallet {
   static const Color black = Color.fromARGB(255, 0, 0, 0);
   static const Color white = Color.fromARGB(255, 255, 255, 255);
   static const Color greyLight = Color(0xFF5e5e5e);
-  static const Color greyDark = Color(0xFF343434);
+  static const Color greyDark = Color.fromARGB(255, 30, 30, 30);
   static const Color background = Color(0xFFF7F7F7);
   static const Color purple = kPurple;
   static const Color purpleDark = Color.fromARGB(255, 108, 13, 125);

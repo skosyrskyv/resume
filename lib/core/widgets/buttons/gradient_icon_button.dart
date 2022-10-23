@@ -23,6 +23,8 @@ class GradientIconButton extends StatelessWidget {
     final theme = Theme.of(context);
     return InkWell(
       onTap: onTap,
+      customBorder: const CircleBorder(),
+      highlightColor: theme.colorScheme.surface,
       child: Container(
         height: size,
         width: size,

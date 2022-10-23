@@ -6,19 +6,21 @@ class BreakPoints {
   static const int XL = 1600;
   static const int LG = 1140;
   static const int MD = 720;
-  static const int SM = 576;
-  static const int XS = 450;
+  static const int SM = 600;
+  static const int XS = 520;
 }
 
 class Responsive extends StatelessWidget {
   final Widget mobile;
   final Widget? tablet;
   final Widget desktop;
+  final bool showTabletAsMobile;
 
   const Responsive({
     Key? key,
     required this.mobile,
     this.tablet,
+    this.showTabletAsMobile = false,
     required this.desktop,
   }) : super(key: key);
 
@@ -38,7 +40,7 @@ class Responsive extends StatelessWidget {
       return desktop;
     } else if (isTablet(context) && tablet != null) {
       return tablet!;
-    } else if (isTablet(context) && tablet == null) {
+    } else if (isTablet(context) && tablet == null && !showTabletAsMobile) {
       return desktop;
     } else {
       return mobile;

@@ -58,6 +58,7 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
   Future<void> _setLightThemeHandler(_SetLightThemeEvent event, emit) async {
     try {
       _localstore.setString(SharedPreferenceKeys.THEME, ThemeName.light);
+
       emit(ThemeState.light(theme: _theme.lightTheme));
     } catch (e) {
       emit(ThemeState.dark(theme: _theme.darkTheme));

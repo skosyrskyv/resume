@@ -19,6 +19,7 @@ class Home extends StatelessWidget {
     final colorizeTextStyle = TextStyle(
       fontSize: 80.0,
       fontFamily: GoogleFonts.russoOne().fontFamily,
+      fontWeight: FontWeight.w900,
     );
 
     final List<String> texts = [
