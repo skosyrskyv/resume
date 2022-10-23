@@ -10,7 +10,6 @@ import 'package:resume/core/widgets/blurred_surface.dart';
 import 'package:resume/core/widgets/bottom_navbar/custom_bottom_navigator.dart';
 import 'package:resume/core/widgets/buttons/gradient_text_button.dart';
 import 'package:resume/utils/responsive.dart';
-import 'package:resume/extensions/string_extension.dart';
 
 class NavigatorDisplayResolver extends StatefulWidget {
   const NavigatorDisplayResolver({super.key});
@@ -118,6 +117,7 @@ class _Desktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final windowPadding = MediaQuery.of(context).padding;
     return AppScaffold(
       appBar: const CustomAppBar(),
       body: SafeArea(
@@ -127,7 +127,7 @@ class _Desktop extends StatelessWidget {
           children: [
             const Positioned.fill(child: NavigatorWidget()),
             Positioned(
-              top: 0,
+              top: windowPadding.top,
               left: 0,
               child: _TextNavigationButton(
                 text: items[0].label!.tr(),
@@ -135,7 +135,7 @@ class _Desktop extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 0,
+              top: windowPadding.top,
               right: 0,
               child: _TextNavigationButton(
                 text: items[1].label!.tr(),
@@ -143,7 +143,7 @@ class _Desktop extends StatelessWidget {
               ),
             ),
             Positioned(
-              bottom: 0,
+              bottom: windowPadding.bottom,
               right: 0,
               child: _TextNavigationButton(
                 text: items[2].label!.tr(),
@@ -151,7 +151,7 @@ class _Desktop extends StatelessWidget {
               ),
             ),
             Positioned(
-              bottom: 0,
+              bottom: windowPadding.bottom,
               left: 0,
               child: _TextNavigationButton(
                 text: items[3].label!.tr(),
@@ -169,7 +169,6 @@ class _TextNavigationButton extends StatelessWidget {
   final String text;
   final VoidCallback onTap;
   const _TextNavigationButton({
-    super.key,
     required this.text,
     required this.onTap,
   });
