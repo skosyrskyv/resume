@@ -16,9 +16,11 @@ class ThemeProvider extends StatelessWidget {
       create: (context) => getIt.get(),
       child: BlocConsumer<ThemeBloc, ThemeState>(
         listener: (context, state) {
-          SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-            systemNavigationBarColor: state.theme.colorScheme.background,
-          ));
+          SystemChrome.setSystemUIOverlayStyle(
+            SystemUiOverlayStyle(
+              systemNavigationBarColor: state.theme.colorScheme.background,
+            ),
+          );
         },
         builder: builder,
       ),
