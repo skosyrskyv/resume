@@ -2,8 +2,18 @@ key,en_US,ru_RU
 app_name,Resume,nРезюме
 home_action,home,главная
 contacts_action,contacts,контакты
-about_action,about,обо мне
+about_action,about me,обо мне
 projects_action,projects,проекты
 greeting_text,Hi!/nI`m Slava/nFlutter/nDeveloper,Привет!/nЯ Слава/nFlutter/nРазработчик
 about_app_text,This is my/nFlutter/nApplication/nResume,Это мое/nFlutter/nПриложение/nРезюме
 app_abilities_text,You can/nRun this/nOn any/nDevices,Ты можешь/nЗапустить/nПриложение/nНа любом/nУстройстве,
+about_me_title,About me,Обо мне
+soft_skills_title,Soft Skills,Личные качества
+hard_skills_title,Hard Skills,Профессиональные навыки
+about_me_text,"I started deep dive into Flutter around 2 years ago and it's been my favorite framework ever since. Before i worked with React and React Native","Я познакомился с Flutter около двух лет назад и с тех пор это мой любимый фреймворк. До этого работал на React и React Native. Изучаю все технологии самостоятельно. В данный момент усиленно подымаю уровень английского."
+communication,communication,общение
+team_work,team work,командная работа
+learning,learning,обучаемость
+initiation,initiation,инициатива
+presentation,presentation,презентации
+english,english,английский
