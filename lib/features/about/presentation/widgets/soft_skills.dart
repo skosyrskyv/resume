@@ -63,7 +63,7 @@ class SoftSkills extends StatelessWidget {
           VerticalSpacer.h8(),
           const AnimatedProgressBar(
             progress: 80,
-            animationStartDelay: Duration(milliseconds: 1300),
+            animationStartDelay: Duration(milliseconds: 1600),
           ),
           VerticalSpacer.h8(),
         ],
