@@ -1,18 +1,41 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:resume/core/widgets/animated_progress_bar.dart';
+import 'package:resume/extensions/iterable_extension.dart';
+import 'package:resume/features/about/data/skills_data.dart';
+import 'package:resume/features/about/presentation/widgets/skill_progress.dart';
 import 'package:resume/features/about/presentation/widgets/skill_tag.dart';
 import 'package:resume/features/about/presentation/widgets/titled_surface.dart';
 import 'package:resume/utils/spacers.dart';
-import 'package:resume/extensions/string_extension.dart';
 
 class HardSkills extends StatelessWidget {
   const HardSkills({super.key});
 
+  List<Widget> _tagsBuilder() {
+    return kHardSkillTechnologiesData
+        .map((name) => SkillTag(text: name))
+        .toList();
+  }
+
+  List<Widget> _skillsBuilder() {
+    return kHardSkillsData
+        .mapWithIndex(
+          (skill, index) => Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SkillProgress(
+                label: skill.name.tr(),
+                progress: skill.progress,
+                animationDelay: Duration(milliseconds: 300 + index * 300),
+              ),
+              VerticalSpacer.h16(),
+            ],
+          ),
+        )
+        .toList();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     return TitledSurface(
       title: 'hard_skills_title'.tr(),
       child: Column(
@@ -22,35 +45,11 @@ class HardSkills extends StatelessWidget {
             child: Wrap(
               spacing: 10,
               runSpacing: 10,
-              children: const [
-                SkillTag(text: 'Flutter'),
-                SkillTag(text: 'React'),
-                SkillTag(text: 'React Native'),
-                SkillTag(text: 'Dart'),
-                SkillTag(text: 'JavaScript'),
-                SkillTag(text: 'TypeScript'),
-                SkillTag(text: 'GitHub'),
-                SkillTag(text: 'Figma'),
-                SkillTag(text: 'Clean Architecture'),
-                SkillTag(text: 'BLoC'),
-                SkillTag(text: 'FLUX'),
-                SkillTag(text: 'Web Socket'),
-                SkillTag(text: 'GraphQL'),
-                SkillTag(text: 'REST API'),
-              ],
+              children: _tagsBuilder(),
             ),
           ),
           VerticalSpacer.h16(),
-          Text(
-            'english'.tr().capitalize(),
-            style: theme.textTheme.labelMedium,
-          ),
-          VerticalSpacer.h8(),
-          const AnimatedProgressBar(
-            progress: 30,
-            animationStartDelay: Duration(milliseconds: 600),
-          ),
-          VerticalSpacer.h8(),
+          ..._skillsBuilder(),
         ],
       ),
     );
