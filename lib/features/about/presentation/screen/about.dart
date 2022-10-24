@@ -15,9 +15,9 @@ class About extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Screen(
       body: CenteredContentScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 16),
+        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 120),
         children: [
-          VerticalSpacer(64),
+          // VerticalSpacer(120),
           FadeInAnimation(
             child: AboutMe(),
           ),
@@ -26,7 +26,7 @@ class About extends StatelessWidget {
             mobile: _Mobile(),
             desktop: _Desktop(),
           ),
-          VerticalSpacer(100),
+          // VerticalSpacer(120),
         ],
       ),
     );
