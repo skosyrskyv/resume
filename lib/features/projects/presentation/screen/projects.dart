@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:funvas/funvas.dart';
+import 'package:resume/core/widgets/animated_background.dart/animated_background.dart';
 import 'package:resume/core/widgets/screen.dart';
 import 'package:resume/features/projects/data/projects_data.dart';
 import 'package:resume/features/projects/presentation/widgets/project.dart';
@@ -24,12 +26,26 @@ class _ProjectsState extends State<Projects> {
   @override
   Widget build(BuildContext context) {
     return Screen(
-      body: PageView.builder(
-        controller: _controller,
-        padEnds: false,
-        itemBuilder: (context, index) => Project(
-          project: kProjectsData[index % kProjectsData.length],
-        ),
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: FunvasContainer(
+              funvas: AnimatedBackground(
+                size: MediaQuery.of(context).size,
+                brightness: Theme.of(context).brightness,
+              ),
+            ),
+          ),
+          Positioned.fill(
+            child: PageView.builder(
+              controller: _controller,
+              padEnds: false,
+              itemBuilder: (context, index) => Project(
+                project: kProjectsData[index % kProjectsData.length],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

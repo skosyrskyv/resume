@@ -5,12 +5,12 @@ import 'package:resume/utils/spacers.dart';
 
 class TitledSurface extends StatelessWidget {
   final String title;
-  final BoxConstraints constrains;
+  final BoxConstraints constraints;
   final Widget child;
   const TitledSurface({
     super.key,
     this.title = '',
-    this.constrains = const BoxConstraints(),
+    this.constraints = const BoxConstraints(),
     this.child = const EmptyWidget(),
   });
 
@@ -20,7 +20,7 @@ class TitledSurface extends StatelessWidget {
 
     return Surface(
       padding: const EdgeInsets.all(16),
-      constraints: constrains,
+      constraints: constraints,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,

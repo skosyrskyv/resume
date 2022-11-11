@@ -6,7 +6,9 @@ import 'package:resume/utils/empty.dart';
 class BlurredSurface extends StatelessWidget {
   final double? height;
   final double? width;
+  final EdgeInsets padding;
   final EdgeInsets margin;
+  final BoxConstraints constrains;
   final BorderRadius borderRadius;
   final Color? background;
   final double sigmaX;
@@ -16,7 +18,9 @@ class BlurredSurface extends StatelessWidget {
     super.key,
     this.height,
     this.width,
+    this.padding = EdgeInsets.zero,
     this.margin = EdgeInsets.zero,
+    this.constrains = const BoxConstraints(),
     this.borderRadius = BorderRadius.zero,
     this.background,
     this.sigmaX = 10,
@@ -38,6 +42,8 @@ class BlurredSurface extends StatelessWidget {
           child: Container(
             height: height,
             width: width,
+            padding: padding,
+            constraints: constrains,
             decoration: BoxDecoration(
               color: background,
             ),

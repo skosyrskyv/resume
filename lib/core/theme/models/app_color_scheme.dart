@@ -31,7 +31,7 @@ class BaseAppColorScheme implements AppColorScheme {
         onErrorContainer: Color(0xFF662326),
         background: ColorPallet.background,
         onBackground: ColorPallet.greyDark,
-        surface: ColorPallet.white,
+        surface: ColorPallet.purpleSuperLight,
         onSurface: ColorPallet.black,
       );
 
@@ -56,7 +56,7 @@ class BaseAppColorScheme implements AppColorScheme {
         onErrorContainer: Color(0xFF662326),
         background: ColorPallet.black,
         onBackground: Color(0xFF343434),
-        surface: ColorPallet.greyDark,
+        surface: ColorPallet.purpleSuperDark,
         onSurface: Color(0xFF343434),
       );
 }

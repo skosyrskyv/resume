@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:funvas/funvas.dart';
+import 'package:resume/core/widgets/animated_background.dart/animated_background.dart';
 import 'package:resume/core/widgets/centered_content_scroll_view.dart';
 import 'package:resume/core/widgets/screen.dart';
 import 'package:resume/core/animations/fade_in_animation.dart';
@@ -13,20 +15,33 @@ class About extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Screen(
-      body: CenteredContentScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 120),
+    return Screen(
+      body: Stack(
         children: [
-          // VerticalSpacer(120),
-          FadeInAnimation(
-            child: AboutMe(),
+          Positioned.fill(
+            child: FunvasContainer(
+              funvas: AnimatedBackground(
+                  size: MediaQuery.of(context).size,
+                  brightness: Theme.of(context).brightness),
+            ),
           ),
-          VerticalSpacer(16),
-          Responsive(
-            mobile: _Mobile(),
-            desktop: _Desktop(),
+          const Positioned.fill(
+            child: CenteredContentScrollView(
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 120),
+              children: [
+                // VerticalSpacer(120),
+                FadeInAnimation(
+                  child: AboutMe(),
+                ),
+                VerticalSpacer(16),
+                Responsive(
+                  mobile: _Mobile(),
+                  desktop: _Desktop(),
+                ),
+                // VerticalSpacer(120),
+              ],
+            ),
           ),
-          // VerticalSpacer(120),
         ],
       ),
     );
