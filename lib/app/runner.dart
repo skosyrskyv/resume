@@ -20,22 +20,19 @@ final getIt = GetIt.instance;
 class Runner {
   static Future<void> run() async {
     await _initializeFlutterPluginsAndDependencies();
-    runZonedGuarded(_runZonedBlocObserver, _errorHandler);
+    runZonedGuarded(_runApp, _errorHandler);
   }
 
   static Future<void> _initializeFlutterPluginsAndDependencies() async {
+    Bloc.observer = BlocObserverOverrides();
     WidgetsFlutterBinding.ensureInitialized();
     await EasyLocalization.ensureInitialized();
     CustomNavigator.setupRouter();
     await configureDependencies();
   }
 
-  static _runZonedBlocObserver() async {
-    Bloc.observer = BlocObserverOverrides();
-    return runZonedGuarded(
-      () => runApp(const AppBlocsProvider(child: App())),
-      _errorHandler,
-    );
+  static _runApp() async {
+    runApp(const AppBlocsProvider(child: App()));
   }
 
   static Future<void> _errorHandler(exception, stacktrace) async {
