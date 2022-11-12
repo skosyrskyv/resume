@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:funvas/funvas.dart';
-import 'package:resume/core/widgets/animated_background.dart/animated_background.dart';
+import 'package:resume/core/animations/animated_background.dart';
 import 'package:resume/core/widgets/centered_content_scroll_view.dart';
 import 'package:resume/core/widgets/screen.dart';
 import 'package:resume/core/animations/fade_in_animation.dart';

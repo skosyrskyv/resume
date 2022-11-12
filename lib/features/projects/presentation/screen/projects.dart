@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:funvas/funvas.dart';
-import 'package:resume/core/widgets/animated_background.dart/animated_background.dart';
+import 'package:resume/core/animations/animated_background.dart';
 import 'package:resume/core/widgets/screen.dart';
 import 'package:resume/features/projects/data/projects_data.dart';
 import 'package:resume/features/projects/presentation/widgets/project.dart';
