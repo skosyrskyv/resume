@@ -24,6 +24,12 @@ class _ProjectsState extends State<Projects> {
   }
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Screen(
       body: Stack(
