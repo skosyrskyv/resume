@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume/core/widgets/gradient_logo_image.dart';
 import 'package:resume/utils/spacers.dart';
 
 class ContactsListItem extends StatelessWidget {
@@ -31,27 +32,7 @@ class ContactsListItem extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(50),
-                      child: ShaderMask(
-                        blendMode: theme.brightness == Brightness.light
-                            ? BlendMode.lighten
-                            : BlendMode.darken,
-                        shaderCallback: (Rect bounds) {
-                          return LinearGradient(
-                            colors: [
-                              theme.colorScheme.primary,
-                              theme.colorScheme.secondary,
-                            ],
-                          ).createShader(bounds);
-                        },
-                        child: CircleAvatar(
-                          radius: 35,
-                          backgroundImage: AssetImage(imagePath),
-                          backgroundColor: theme.colorScheme.onPrimary,
-                        ),
-                      ),
-                    ),
+                    GradientLogoImage(assetPath: imagePath),
                     HorizontalSpacer.w32(),
                     Text(
                       label,
