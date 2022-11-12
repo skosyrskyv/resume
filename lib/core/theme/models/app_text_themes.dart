@@ -47,14 +47,14 @@ class BaseAppTextTheme implements AppTextTheme {
       );
   // DISPLAY
   static const _displayLarge =
-      TextStyle(fontSize: 57, fontWeight: FontWeight.w400);
+      TextStyle(fontSize: 57, fontWeight: FontWeight.w600);
 
   static const _displayMedium =
       TextStyle(fontSize: 45, fontWeight: FontWeight.w600);
 
   static const _displaySmall = TextStyle(
     fontSize: 36,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w800,
   );
 
   // HEADLINE
@@ -79,7 +79,7 @@ class BaseAppTextTheme implements AppTextTheme {
 
   // BODY
   static const _bodyLarge =
-      TextStyle(fontSize: 16, fontWeight: FontWeight.normal);
+      TextStyle(fontSize: 16, fontWeight: FontWeight.w500);
 
   static const _bodyMedium = TextStyle(
     fontSize: 14,
