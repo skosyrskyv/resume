@@ -13,11 +13,11 @@ class BaseAppColorScheme implements AppColorScheme {
   @override
   ColorScheme get lightScheme => const ColorScheme(
         brightness: Brightness.light,
-        primary: ColorPallet.purple,
+        primary: Color(0xFF9C27B0),
         onPrimary: ColorPallet.white,
         primaryContainer: Color(0xFFCCDCE7),
         onPrimaryContainer: Color(0xFF003E6E),
-        secondary: ColorPallet.blue,
+        secondary: Color(0xFF5748FF),
         onSecondary: Color(0xFFFFFFFF),
         secondaryContainer: Color(0xFFCFEBFF),
         onSecondaryContainer: Color(0xFF0A7ACC),
