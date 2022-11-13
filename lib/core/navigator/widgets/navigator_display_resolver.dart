@@ -9,6 +9,7 @@ import 'package:resume/core/widgets/app_scaffold.dart';
 import 'package:resume/core/widgets/blurred_surface.dart';
 import 'package:resume/core/widgets/bottom_navbar/custom_bottom_navigator.dart';
 import 'package:resume/core/widgets/buttons/gradient_text_button.dart';
+import 'package:resume/core/widgets/menu/menu_wrapper.dart';
 import 'package:resume/utils/responsive.dart';
 
 class NavigatorDisplayResolver extends StatefulWidget {
@@ -111,95 +112,116 @@ class _Mobile extends StatelessWidget {
 // DESKTOP
 class _Desktop extends StatelessWidget {
   final List<BottomNavigationBarItem> items;
+
   const _Desktop({
+    super.key,
     required this.items,
   });
 
   @override
   Widget build(BuildContext context) {
-    final windowPadding = MediaQuery.of(context).padding;
-    return AppScaffold(
-      appBar: const CustomAppBar(),
-      body: SafeArea(
-        top: false,
-        bottom: false,
-        child: Stack(
-          children: [
-            const Positioned.fill(child: NavigatorWidget()),
-            Positioned(
-              top: windowPadding.top,
-              left: 0,
-              child: _TextNavigationButton(
-                text: items[0].label!.tr(),
-                onTap: () => context.read<BottomNavigatorCubit>().setTab(0),
-              ),
-            ),
-            Positioned(
-              top: windowPadding.top,
-              right: 0,
-              child: _TextNavigationButton(
-                text: items[1].label!.tr(),
-                onTap: () => context.read<BottomNavigatorCubit>().setTab(1),
-              ),
-            ),
-            Positioned(
-              bottom: windowPadding.bottom,
-              right: 0,
-              child: _TextNavigationButton(
-                text: items[2].label!.tr(),
-                onTap: () => context.read<BottomNavigatorCubit>().setTab(2),
-              ),
-            ),
-            Positioned(
-              bottom: windowPadding.bottom,
-              left: 0,
-              child: _TextNavigationButton(
-                text: items[3].label!.tr(),
-                onTap: () => context.read<BottomNavigatorCubit>().setTab(3),
-              ),
-            ),
-          ],
-        ),
+    return MenuWrapper(
+      items: items,
+      child: const AppScaffold(
+        appBar: CustomAppBar(),
+        body: NavigatorWidget(),
       ),
     );
   }
 }
 
-class _TextNavigationButton extends StatelessWidget {
-  final String text;
-  final VoidCallback onTap;
-  const _TextNavigationButton({
-    required this.text,
-    required this.onTap,
-  });
+// DESKTOP
+// class _Desktop extends StatelessWidget {
+//   final List<BottomNavigationBarItem> items;
+//   const _Desktop({
+//     required this.items,
+//   });
 
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final colors = <Color>[
-      theme.colorScheme.primary,
-      theme.colorScheme.secondary,
-    ];
+//   @override
+//   Widget build(BuildContext context) {
+//     final windowPadding = MediaQuery.of(context).padding;
+//     return AppScaffold(
+//       appBar: const CustomAppBar(),
+//       body: SafeArea(
+//         top: false,
+//         bottom: false,
+//         child: Stack(
+//           children: [
+//             const Positioned.fill(child: NavigatorWidget()),
+//             Positioned(
+//               top: windowPadding.top,
+//               left: 0,
+//               child: _TextNavigationButton(
+//                 text: items[0].label!.tr(),
+//                 onTap: () => context.read<BottomNavigatorCubit>().setTab(0),
+//               ),
+//             ),
+//             Positioned(
+//               top: windowPadding.top,
+//               right: 0,
+//               child: _TextNavigationButton(
+//                 text: items[1].label!.tr(),
+//                 onTap: () => context.read<BottomNavigatorCubit>().setTab(1),
+//               ),
+//             ),
+//             Positioned(
+//               bottom: windowPadding.bottom,
+//               right: 0,
+//               child: _TextNavigationButton(
+//                 text: items[2].label!.tr(),
+//                 onTap: () => context.read<BottomNavigatorCubit>().setTab(2),
+//               ),
+//             ),
+//             Positioned(
+//               bottom: windowPadding.bottom,
+//               left: 0,
+//               child: _TextNavigationButton(
+//                 text: items[3].label!.tr(),
+//                 onTap: () => context.read<BottomNavigatorCubit>().setTab(3),
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
 
-    const textStyle = TextStyle(
-      fontSize: 20,
-      fontFamily: 'Invetero',
-    );
+// class _TextNavigationButton extends StatelessWidget {
+//   final String text;
+//   final VoidCallback onTap;
+//   const _TextNavigationButton({
+//     required this.text,
+//     required this.onTap,
+//   });
 
-    const padding = EdgeInsets.symmetric(horizontal: 16, vertical: 8);
+//   @override
+//   Widget build(BuildContext context) {
+//     final theme = Theme.of(context);
+//     final colors = <Color>[
+//       theme.colorScheme.primary,
+//       theme.colorScheme.secondary,
+//     ];
 
-    return BlurredSurface(
-      margin: const EdgeInsets.all(8),
-      borderRadius: BorderRadius.circular(20),
-      sigmaX: 2,
-      sigmaY: 2,
-      child: GradientTextButton(
-        text: text,
-        onTap: onTap,
-        padding: padding,
-        textStyle: textStyle,
-        colors: colors,
-      ),
-    );
-  }
-}
+//     const textStyle = TextStyle(
+//       fontSize: 20,
+//       fontFamily: 'Invetero',
+//     );
+
+//     const padding = EdgeInsets.symmetric(horizontal: 16, vertical: 8);
+
+//     return BlurredSurface(
+//       margin: const EdgeInsets.all(8),
+//       borderRadius: BorderRadius.circular(20),
+//       sigmaX: 2,
+//       sigmaY: 2,
+//       child: GradientTextButton(
+//         text: text,
+//         onTap: onTap,
+//         padding: padding,
+//         textStyle: textStyle,
+//         colors: colors,
+//       ),
+//     );
+//   }
+// }
