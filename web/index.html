@@ -11,13 +11,16 @@
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="resume">
+  <meta name="apple-mobile-web-app-title" content="Resume">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png" />
 
-  <title>resume</title>
+  <!-- Styles -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+  <title>Resume</title>
   <link rel="manifest" href="manifest.json">
 
   <script>
@@ -28,7 +31,14 @@
   <script src="flutter.js" defer></script>
 </head>
 
-<body>
+<body style="background-color: black;">
+  <div class="center">
+    <div class="loading-indicator">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
   <script>
     window.addEventListener('load', function (ev) {
       // Download main.dart.js
