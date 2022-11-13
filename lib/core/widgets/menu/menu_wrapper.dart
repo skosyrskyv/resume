@@ -22,6 +22,7 @@ class MenuWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return BlocProvider(
       create: (context) => getIt.get<MenuCubit>(),
       child: BlocBuilder<MenuCubit, MenuState>(
@@ -43,8 +44,16 @@ class MenuWrapper extends StatelessWidget {
                         context.read<BottomNavigatorCubit>().setTab(index);
                         context.read<MenuCubit>().hide();
                       },
+                      iconColor: theme.brightness == Brightness.light
+                          ? theme.colorScheme.tertiary
+                          : theme.colorScheme.onSurface,
                       leading: items[index].icon,
-                      title: Text(items[index].label!.tr().capitalize()),
+                      title: Text(
+                        items[index].label!.tr().capitalize(),
+                        style: theme.textTheme.labelLarge!.copyWith(
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
                     ),
                   ),
                 ),

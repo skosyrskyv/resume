@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:resume/constants/platform_logo_asset_keys.dart';
 import 'package:resume/features/projects/data/models/source_link.dart';
 import 'package:resume/features/projects/presentation/widgets/logo_button.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class LinksBar extends StatelessWidget {
   final List<SourceLink> links;
@@ -18,6 +19,7 @@ class LinksBar extends StatelessWidget {
           (item) => Padding(
             padding: const EdgeInsets.all(4.0),
             child: LogoButton(
+              onTap: () => launchUrlString(item.url),
               assetPath: kPlatformLogoAssetKeys[item.platform],
             ),
           ),

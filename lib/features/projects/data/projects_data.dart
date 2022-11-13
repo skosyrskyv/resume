@@ -34,9 +34,6 @@ const kProjectsData = <ProjectModel>[
           url:
               'https://play.google.com/store/apps/details?id=com.mondino.pocketmedic',
           platform: PlatformName.Android),
-      SourceLink(
-          url: 'https://skosyrskyv.github.io/resume/',
-          platform: PlatformName.Web),
     ],
   ),
   // ProjectModel(
