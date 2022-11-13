@@ -20,11 +20,12 @@ class App extends StatelessWidget {
           return MaterialApp(
             key: UniqueKey(),
             locale: context.locale,
+            color: Colors.black,
             supportedLocales: context.supportedLocales,
             localizationsDelegates: context.localizationDelegates,
             debugShowCheckedModeBanner: false,
             theme: state.theme,
-            title: 'app_name'.tr(),
+            title: 'Resume',
             home: const NavigatorDisplayResolver(),
           );
         },
