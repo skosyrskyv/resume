@@ -5,9 +5,11 @@ import 'package:resume/features/projects/presentation/widgets/logo_button.dart';
 
 class LinksBar extends StatelessWidget {
   final List<SourceLink> links;
+  final Axis direction;
   const LinksBar({
     super.key,
     required this.links,
+    this.direction = Axis.vertical,
   });
 
   List<Widget> itemsBuilder() {
@@ -25,6 +27,12 @@ class LinksBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (direction == Axis.horizontal) {
+      return Row(
+        mainAxisSize: MainAxisSize.min,
+        children: itemsBuilder(),
+      );
+    }
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: itemsBuilder(),

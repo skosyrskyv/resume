@@ -25,10 +25,18 @@ class GradientLogoImage extends StatelessWidget {
             ],
           ).createShader(bounds);
         },
-        child: CircleAvatar(
-          radius: size,
-          backgroundImage: AssetImage(assetPath),
-          backgroundColor: theme.colorScheme.onPrimary,
+        child: Container(
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle,
+            color: Colors.white,
+          ),
+          alignment: Alignment.center,
+          padding: const EdgeInsets.all(2),
+          child: CircleAvatar(
+            radius: size,
+            foregroundImage: AssetImage(assetPath),
+            backgroundColor: Colors.white,
+          ),
         ),
       ),
     );

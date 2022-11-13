@@ -3,6 +3,7 @@ import 'package:funvas/funvas.dart';
 import 'package:resume/core/animations/animated_background.dart';
 import 'package:resume/core/widgets/screen.dart';
 import 'package:resume/features/projects/data/projects_data.dart';
+import 'package:resume/features/projects/presentation/state/page_controller_provider.dart';
 import 'package:resume/features/projects/presentation/widgets/project.dart';
 
 class Projects extends StatefulWidget {
@@ -31,27 +32,30 @@ class _ProjectsState extends State<Projects> {
 
   @override
   Widget build(BuildContext context) {
-    return Screen(
-      body: Stack(
-        children: [
-          Positioned.fill(
-            child: FunvasContainer(
-              funvas: AnimatedBackground(
-                size: MediaQuery.of(context).size,
-                brightness: Theme.of(context).brightness,
+    return PageControllerProvider(
+      controller: _controller,
+      child: Screen(
+        body: Stack(
+          children: [
+            Positioned.fill(
+              child: FunvasContainer(
+                funvas: AnimatedBackground(
+                  size: MediaQuery.of(context).size,
+                  brightness: Theme.of(context).brightness,
+                ),
               ),
             ),
-          ),
-          Positioned.fill(
-            child: PageView.builder(
-              controller: _controller,
-              padEnds: false,
-              itemBuilder: (context, index) => Project(
-                project: kProjectsData[index % kProjectsData.length],
+            Positioned.fill(
+              child: PageView.builder(
+                controller: _controller,
+                padEnds: false,
+                itemBuilder: (context, index) => Project(
+                  project: kProjectsData[index % kProjectsData.length],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

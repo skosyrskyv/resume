@@ -1,7 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:resume/features/projects/data/models/project_model.dart';
+import 'package:resume/features/projects/presentation/state/page_controller_provider.dart';
 import 'package:resume/features/projects/presentation/widgets/links_bar.dart';
+import 'package:resume/features/projects/presentation/widgets/page_controls.dart';
 import 'package:resume/features/projects/presentation/widgets/project_info_tile.dart';
 
 class DesktopProjectsLayout extends StatelessWidget {
@@ -22,26 +24,37 @@ class DesktopProjectsLayout extends StatelessWidget {
         ),
         child: Stack(
           children: [
-            Text(
-              project.name.tr(),
-              textAlign: TextAlign.center,
-              style: theme.textTheme.displaySmall,
-            ),
             Positioned.fill(
               child: Container(
-                padding: const EdgeInsets.only(bottom: 100, top: 50),
+                padding: const EdgeInsets.only(bottom: 80, top: 0),
                 child: Image.asset(project.asset),
               ),
             ),
             Positioned(
-              left: 10,
-              bottom: 60,
-              child: LinksBar(links: project.links),
+              left: 0,
+              right: 0,
+              bottom: 16,
+              child: Center(
+                child: LinksBar(
+                  links: project.links,
+                  direction: Axis.horizontal,
+                ),
+              ),
             ),
             Positioned(
-              right: 0,
-              bottom: 40,
-              child: ProjectInfoTile(text: project.info.tr()),
+              bottom: 100,
+              right: 50,
+              child: ProjectInfoTile(
+                projectName: project.name.tr(),
+                text: project.info.tr(),
+              ),
+            ),
+            Positioned(
+              bottom: 75,
+              right: 90,
+              child: PageControls(
+                controller: PageControllerProvider.of(context)!.controller,
+              ),
             ),
           ],
         ),

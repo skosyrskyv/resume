@@ -1,6 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:resume/features/projects/data/models/project_model.dart';
+import 'package:resume/features/projects/presentation/state/page_controller_provider.dart';
+import 'package:resume/features/projects/presentation/widgets/links_bar.dart';
+import 'package:resume/features/projects/presentation/widgets/page_controls.dart';
+import 'package:resume/features/projects/presentation/widgets/project_info_tile.dart';
+import 'package:resume/utils/spacers.dart';
 
 class MobileProjectLayout extends StatelessWidget {
   final ProjectModel project;
@@ -13,22 +18,36 @@ class MobileProjectLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return SafeArea(
+      bottom: false,
       child: Stack(
         children: [
           Positioned(
-            left: 0,
-            top: 0,
-            right: 0,
-            child: Text(
-              project.name.tr(),
-              textAlign: TextAlign.center,
-              style: theme.textTheme.displaySmall,
+            top: 8,
+            left: 8,
+            right: 8,
+            child: Image.asset(project.asset),
+          ),
+          Positioned(
+            bottom: 120,
+            right: 16,
+            left: 16,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                LinksBar(links: project.links),
+                HorizontalSpacer.w16(),
+                Expanded(
+                  child: ProjectInfoTile(
+                      text: project.info.tr(), projectName: project.name.tr()),
+                ),
+              ],
             ),
           ),
-          Positioned.fill(
-            child: Container(
-              padding: const EdgeInsets.only(bottom: 100, top: 50),
-              child: Image.asset(project.asset),
+          Positioned(
+            bottom: 95,
+            right: 50,
+            child: PageControls(
+              controller: PageControllerProvider.of(context)!.controller,
             ),
           ),
         ],
