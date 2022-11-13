@@ -16,7 +16,6 @@ class MobileProjectLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return SafeArea(
       bottom: false,
       child: Stack(

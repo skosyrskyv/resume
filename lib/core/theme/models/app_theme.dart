@@ -46,5 +46,6 @@ class BaseAppTheme implements AppTheme {
         colorScheme: _colorScheme.darkScheme,
         textTheme: _textScheme.darkThemeTextThemes,
         fontFamily: GoogleFonts.roboto().fontFamily,
+        scaffoldBackgroundColor: ColorPallet.black,
       );
 }

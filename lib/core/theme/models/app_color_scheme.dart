@@ -57,6 +57,6 @@ class BaseAppColorScheme implements AppColorScheme {
         background: ColorPallet.black,
         onBackground: Color(0xFF343434),
         surface: ColorPallet.purpleSuperDark,
-        onSurface: Color(0xFF343434),
+        onSurface: Color.fromARGB(255, 255, 255, 255),
       );
 }
