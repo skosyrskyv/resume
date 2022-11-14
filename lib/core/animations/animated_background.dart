@@ -62,7 +62,7 @@ class AnimatedBackground extends Funvas {
               214,
               152,
               255,
-              const Cubic(0.2, 0.8, 1, 1)
+              const Cubic(0.1, 1, 1, 1)
                   .transform(pow(i / _shaderResolution, 2).toDouble()),
             ),
         ]);
