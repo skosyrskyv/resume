@@ -25,7 +25,7 @@ class ProjectInfoTile extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            if (projectName != null || projectName != '') ...[
+            if (projectName != '') ...[
               Text(
                 projectName,
                 style: theme.textTheme.titleMedium,

@@ -42,7 +42,6 @@ class _ArrowButton extends StatelessWidget {
   final VoidCallback onTap;
   final ArrowDirection direction;
   const _ArrowButton({
-    super.key,
     required this.direction,
     required this.onTap,
   });
