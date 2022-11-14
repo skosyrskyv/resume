@@ -10,7 +10,7 @@ app_abilities_text,You can/nRun this/nOn any/nDevices,Ты можешь/nЗап�
 about_me_title,About me,Обо мне
 soft_skills_title,Soft Skills,Личные качества
 hard_skills_title,Hard Skills,Профессиональные навыки
-about_me_text,"I got to know Flutter about two years ago, and it's been my favorite framework ever since. Before that, I worked with React and React Native. I study all technologies on my own. At the moment, I am raising my English level strenuously.","Я познакомился с Flutter около двух лет назад и с тех пор это мой любимый фреймворк. До этого работал на React и React Native. Изучаю все технологии самостоятельно. В данный момент усиленно подымаю уровень английского."
+about_me_text,"Hi! I`m Slava Flutter developer, 26 y.o., live in Russia. I got to know Flutter about two years ago, and it's been my favorite framework ever since. Before that, I worked with React and React Native. I study all technologies on my own. At the moment, I am raising my English level strenuously.","Я познакомился с Flutter около двух лет назад и с тех пор это мой любимый фреймворк. До этого работал на React и React Native. Изучаю все технологии самостоятельно. В данный момент усиленно подымаю уровень английского."
 communication,communication,общение
 team_work,team work,командная работа
 learning,learning,обучаемость
@@ -19,3 +19,7 @@ presentation,presentation,презентации
 english,english,английский
 mondino_tracker,Mondino Tracker,Трекер Здоровья
 mondino_tracker_project_info,"Application for tracking your pills course. Main features: creating and viewing courses, pills reminders, chat with doctor.Work with Mondino Tracker Doctor.","Приложение для отслеживая приема леарств и телемедицины. Основные функции: создание и просмотр курсов, уведомления о приеме, чат с врачем."
+resume,Resume,Резюме,
+resume_project_info,"My resume, created as multiplatform application. It can be ran on all available platforms. It's provide languages and themes features","Мое резюме, сделанное в виде мультипллатформенного приложения. Можно запустить на всех доступных платформах. Поддерживает функционал смены языка и темы."
+vivat,Vivat Pharmacy,Виват Аптека
+vivat_project_info,"Application for buying pharmacy products. Main features: products viewing, cart, favorites, authorization.","Приложение для покупки лекарств. Основной функционал: просмотр товаров, корзина, избранные, авторизация."
