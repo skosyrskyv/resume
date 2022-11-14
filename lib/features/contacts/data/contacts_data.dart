@@ -7,6 +7,11 @@ const List<ContactModel> kContactsData = [
     url: 'https://github.com/skosyrskyv',
   ),
   ContactModel(
+    label: '@skosyrskyv',
+    imagePath: 'assets/images/telegram_logo.png',
+    url: 'https://t.me/skosyrskyv',
+  ),
+  ContactModel(
     label: 'skosyrskyv@yandex.com',
     imagePath: 'assets/images/yandex_logo.png',
     url: 'mailto://skosyrskyv@yandex.com',
