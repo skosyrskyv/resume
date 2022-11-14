@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:resume/features/projects/data/models/project_model.dart';
 import 'package:resume/features/projects/presentation/state/page_controller_provider.dart';
@@ -16,8 +17,9 @@ class MobileProjectLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bottomPadding = MediaQuery.of(context).padding.bottom;
     return SafeArea(
-      bottom: false,
+      bottom: !kIsWeb,
       child: Stack(
         children: [
           Positioned(
@@ -27,7 +29,7 @@ class MobileProjectLayout extends StatelessWidget {
             child: Image.asset(project.asset),
           ),
           Positioned(
-            bottom: 120,
+            bottom: kIsWeb ? 110 : 80,
             right: 16,
             left: 16,
             child: Row(
@@ -43,7 +45,7 @@ class MobileProjectLayout extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 95,
+            bottom: kIsWeb ? 95 : 55,
             right: 50,
             child: PageControls(
               controller: PageControllerProvider.of(context)!.controller,

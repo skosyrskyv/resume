@@ -9,7 +9,7 @@ class LogoButton extends StatelessWidget {
     super.key,
     this.assetPath,
     this.onTap,
-    this.size = 25,
+    this.size = 20,
   });
 
   @override

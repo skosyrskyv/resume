@@ -32,7 +32,7 @@ class DesktopProjectsLayout extends StatelessWidget {
             Positioned(
               left: 0,
               right: 0,
-              bottom: 16,
+              bottom: 8,
               child: Center(
                 child: LinksBar(
                   links: project.links,
@@ -41,7 +41,7 @@ class DesktopProjectsLayout extends StatelessWidget {
               ),
             ),
             Positioned(
-              bottom: 100,
+              bottom: 110,
               right: 50,
               child: ProjectInfoTile(
                 projectName: project.name.tr(),
@@ -49,7 +49,7 @@ class DesktopProjectsLayout extends StatelessWidget {
               ),
             ),
             Positioned(
-              bottom: 75,
+              bottom: 85,
               right: 90,
               child: PageControls(
                 controller: PageControllerProvider.of(context)!.controller,
