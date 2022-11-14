@@ -4,4 +4,8 @@ enum PlatformName {
   IOS,
   Android,
   Web,
+  Github,
+  Windows,
+  Linux,
+  MacOS,
 }
