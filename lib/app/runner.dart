@@ -50,8 +50,7 @@ class Runner {
 abstract class InjectableModule {
   @preResolve
   @singleton
-  Future<SharedPreferences> get secureStore async =>
-      SharedPreferences.getInstance();
+  Future<SharedPreferences> get prefs async => SharedPreferences.getInstance();
 }
 
 Future<void> configureDependencies() async => await $initGetIt(getIt);

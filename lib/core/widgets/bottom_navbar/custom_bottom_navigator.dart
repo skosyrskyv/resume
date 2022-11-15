@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:resume/core/navigator/cubit/bottom_navigator_cubit.dart';
+import 'package:resume/core/navigator/cubit/navigator_cubit.dart';
 import 'package:resume/core/widgets/blurred_surface.dart';
 import 'package:resume/core/widgets/bottom_navbar/bottom_navbar_button.dart';
 import 'package:resume/extensions/iterable_extension.dart';

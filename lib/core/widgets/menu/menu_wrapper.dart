@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:resume/app/runner.dart';
-import 'package:resume/core/navigator/cubit/bottom_navigator_cubit.dart';
+import 'package:resume/core/navigator/cubit/navigator_cubit.dart';
 import 'package:resume/core/widgets/menu/cubit/menu_cubit.dart';
 import 'package:resume/extensions/string_extension.dart';
 

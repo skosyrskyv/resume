@@ -9,7 +9,7 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 import 'package:shared_preferences/shared_preferences.dart' as _i7;
 
-import '../core/navigator/cubit/bottom_navigator_cubit.dart' as _i4;
+import '../core/navigator/cubit/navigator_cubit.dart' as _i4;
 import '../core/theme/bloc/theme_bloc.dart' as _i10;
 import '../core/theme/models/app_color_scheme.dart' as _i8;
 import '../core/theme/models/app_text_themes.dart' as _i3;
@@ -36,7 +36,7 @@ Future<_i1.GetIt> $initGetIt(
   gh.factory<_i5.ColorPallet>(() => _i5.ColorPallet());
   gh.factory<_i6.MenuCubit>(() => _i6.MenuCubit());
   await gh.singletonAsync<_i7.SharedPreferences>(
-    () => injectableModule.secureStore,
+    () => injectableModule.prefs,
     preResolve: true,
   );
   gh.factory<_i8.AppColorScheme>(

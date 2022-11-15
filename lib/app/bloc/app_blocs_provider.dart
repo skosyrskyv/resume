@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:resume/app/runner.dart';
-import 'package:resume/core/navigator/cubit/bottom_navigator_cubit.dart';
+import 'package:resume/core/navigator/cubit/navigator_cubit.dart';
 import 'package:resume/core/theme/bloc/theme_bloc.dart';
 
 class AppBlocsProvider extends StatelessWidget {
