@@ -13,7 +13,7 @@ class AppBlocsProvider extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (_) => getIt.get<BottomNavigatorCubit>(),
+          create: (_) => getIt.get<NavigatorCubit>(),
         ),
         BlocProvider(
           create: (_) => getIt.get<ThemeBloc>(),

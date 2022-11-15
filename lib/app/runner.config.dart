@@ -32,7 +32,7 @@ Future<_i1.GetIt> $initGetIt(
   );
   final injectableModule = _$InjectableModule();
   gh.factory<_i3.AppTextTheme>(() => _i3.BaseAppTextTheme());
-  gh.factory<_i4.BottomNavigatorCubit>(() => _i4.BottomNavigatorCubit());
+  gh.factory<_i4.NavigatorCubit>(() => _i4.NavigatorCubit());
   gh.factory<_i5.ColorPallet>(() => _i5.ColorPallet());
   gh.factory<_i6.MenuCubit>(() => _i6.MenuCubit());
   await gh.singletonAsync<_i7.SharedPreferences>(

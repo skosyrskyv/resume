@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// The parent scaffold.
 class AppScaffold extends StatelessWidget {
   final Widget? body;
   final PreferredSizeWidget? appBar;

@@ -44,7 +44,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
     final screenWidth = MediaQuery.of(context).size.width;
     final theme = Theme.of(context);
 
-    return BlocBuilder<BottomNavigatorCubit, int>(
+    return BlocBuilder<NavigatorCubit, int>(
       builder: (context, screenIndex) {
         return Container(
           constraints: const BoxConstraints(maxHeight: 110),
@@ -100,8 +100,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                         theme.colorScheme.onPrimary,
                       ],
                       colorChangingDuration: _animationDuration,
-                      onTap: () =>
-                          context.read<BottomNavigatorCubit>().setTab(index),
+                      onTap: () => context.read<NavigatorCubit>().setTab(index),
                     ),
                   ),
                 ),

@@ -41,7 +41,7 @@ class MenuWrapper extends StatelessWidget {
                     itemCount: items.length,
                     itemBuilder: (context, index) => ListTile(
                       onTap: () {
-                        context.read<BottomNavigatorCubit>().setTab(index);
+                        context.read<NavigatorCubit>().setTab(index);
                         context.read<MenuCubit>().hide();
                       },
                       iconColor: theme.brightness == Brightness.light
