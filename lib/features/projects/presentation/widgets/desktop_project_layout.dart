@@ -49,7 +49,7 @@ class DesktopProjectsLayout extends StatelessWidget {
               ),
             ),
             Positioned(
-              bottom: 85,
+              bottom: 90,
               right: 90,
               child: PageControls(
                 controller: PageControllerProvider.of(context)!.controller,

@@ -45,7 +45,7 @@ class MobileProjectLayout extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: kIsWeb ? 95 : 55,
+            bottom: kIsWeb ? 90 : 60,
             right: 50,
             child: PageControls(
               controller: PageControllerProvider.of(context)!.controller,
