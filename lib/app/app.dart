@@ -12,20 +12,19 @@ class App extends StatelessWidget {
     return EasyLocalization(
       path: AppLocalizations.path,
       supportedLocales: AppLocalizations.supportedLocales,
-      startLocale: AppLocalizations.russian,
       fallbackLocale: AppLocalizations.english,
+      saveLocale: true,
       assetLoader: CsvAssetLoader(),
       child: ThemeProvider(
         builder: (context, state) {
           return MaterialApp(
             key: UniqueKey(),
             locale: context.locale,
-            color: Colors.black,
             supportedLocales: context.supportedLocales,
             localizationsDelegates: context.localizationDelegates,
             debugShowCheckedModeBanner: false,
             theme: state.theme,
-            title: 'Resume',
+            onGenerateTitle: (context) => 'resume'.tr(),
             home: const NavigatorDisplayResolver(),
           );
         },
