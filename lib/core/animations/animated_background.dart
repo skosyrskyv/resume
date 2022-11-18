@@ -13,8 +13,9 @@ class AnimatedBackground extends Funvas {
     required this.brightness,
   });
 
-  static const _blobCount = 3, _blobSpeed = 3.0;
-  static const _shaderResolution = 0x1ffe;
+  final _blobCount = 3;
+  final _blobSpeed = 3.0;
+  final _shaderResolution = 0x1ffe;
 
   final _blobs = <Blob>[];
   final _colors = <Color>[];
