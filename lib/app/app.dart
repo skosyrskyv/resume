@@ -18,7 +18,7 @@ class App extends StatelessWidget {
       child: ThemeProvider(
         builder: (context, state) {
           return MaterialApp(
-            key: UniqueKey(),
+            // key: UniqueKey(),
             locale: context.locale,
             supportedLocales: context.supportedLocales,
             localizationsDelegates: context.localizationDelegates,

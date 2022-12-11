@@ -17,7 +17,6 @@ class MobileProjectLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bottomPadding = MediaQuery.of(context).padding.bottom;
     return SafeArea(
       bottom: !kIsWeb,
       child: Stack(

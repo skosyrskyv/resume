@@ -22,8 +22,8 @@ class Home extends StatelessWidget {
               ),
             ),
           ),
-          const Center(
-            child: AnimatedGreetingText(),
+          Center(
+            child: AnimatedGreetingText(key: UniqueKey()),
           ),
         ],
       ),

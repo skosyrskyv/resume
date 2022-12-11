@@ -29,7 +29,6 @@ class About extends StatelessWidget {
             child: CenteredContentScrollView(
               padding: EdgeInsets.symmetric(horizontal: 16, vertical: 120),
               children: [
-                // VerticalSpacer(120),
                 FadeInAnimation(
                   child: AboutMe(),
                 ),
@@ -38,7 +37,6 @@ class About extends StatelessWidget {
                   mobile: _Mobile(),
                   desktop: _Desktop(),
                 ),
-                // VerticalSpacer(120),
               ],
             ),
           ),
